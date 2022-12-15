@@ -32,7 +32,7 @@ const PhoneInput = () => {
       <View style={styles.signin}>
         <View style={styles.header}>
           <Text style={styles.logo}>HUNTER</Text>
-          <Text style={styles.signup}>{signin ? "SignIn" : "SingUp"}</Text>
+          <Text style={styles.signup}>{signin ? "SignIn" : "Login to you account"}</Text>
         </View>
         <View style={styles.comp}>
           <TextInput
@@ -49,12 +49,12 @@ const PhoneInput = () => {
         <View>
           <Text style={styles.resttext} onPress={handlePress1}>{signin ? "New to Hunter? SingUp" : "Already Have an Account? Signup"}</Text>
         </View>
-        <View>
+        {/* <View>
           <Image
             source={require("../assets/images/bgplayers.png")}
             style={styles.image}
           />
-        </View>
+        </View> */}
       </View>
     </SafeAreaView>
   );
@@ -63,12 +63,22 @@ const PhoneInput = () => {
 export default PhoneInput;
 
 const styles = StyleSheet.create({
+  signin: {
+    height: 0.25*height,
+  },
   complete: {
     height: height,
     backgroundColor: "#939DE0",
   },
   header: {
-    padding: 50,
+    borderStyle: "solid",
+    borderWidth: 2,
+    borderColor: "red",
+    marginTop: 150,
+    marginBottom: 0,
+    paddingTop: 10,
+    paddingLeft: 50,
+    paddingBottom: 20,
   },
   logo: {
     fontSize: height * 0.05,
@@ -113,13 +123,22 @@ const styles = StyleSheet.create({
     color: 'white',
   },
   comp: {
+    borderStyle: "solid",
+    borderWidth: 2,
+    borderColor: "red",
     alignItems: "center",
-    padding: 50,
-    marginBottom: 50,
+    paddingHorizontal: 50,
+    paddingTop: 30,
+    marginBottom: 0,
   },
   resttext: {
+    padding: 10,
+    // borderStyle: "solid",
+    // borderWidth: 2,
+    // borderColor: "red",
     textAlign: "center",
     marginBottom: 86,
+    height: 0.5*height,
   },
   image: {
     width: width,
